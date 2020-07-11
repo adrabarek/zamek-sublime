@@ -1,0 +1,5 @@
+[
+	{ "keys": ["ctrl+shift+alt+l"], "command": "open_linked_note" },
+	{ "keys": ["ctrl+shift+alt+t"], "command": "open_note_with_tags" },
+	{ "keys": ["ctrl+shift+alt+o"], "command": "open_note" }
+]
