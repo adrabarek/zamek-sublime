@@ -1,22 +1,22 @@
 [
 	{
 		"caption": "Zamek: Open Note",
-		"command": "open_note"
+		"command": "zamek_open_note"
 	},
 	{
 		"caption": "Zamek: Open Linked Note",
-		"command": "open_linked_note"
+		"command": "zamek_open_linked_note"
 	},
 	{
 		"caption": "Zamek: Open Note With Tags",
-		"command": "open_note_with_tags"
+		"command": "zamek_open_note_with_tags"
 	},
 	{
 		"caption": "Zamek: Print Registry",
-		"command": "print_registry"
+		"command": "zamek_print_registry"
 	},
 	{
 		"caption": "Zamek: Scan Directory For Notes",
-		"command": "scan_directory_for_notes"
+		"command": "zamek_scan_directory_for_notes"
 	},
 ]

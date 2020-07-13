@@ -215,7 +215,7 @@ class PrintRegistryCommand(sublime_plugin.TextCommand):
 		else:
 			sublime.error_message("Registry file doesn't exist. Use \"Zamek: Scan Directory For Notes\" to create it.")
 
-class OpenNoteCommand(sublime_plugin.TextCommand):
+class ZamekOpenNoteCommand(sublime_plugin.TextCommand):
 	def run(self, edit, note_name):
 		if note_name:
 			self.view.window().open_file(self.registry.notes[note_name].path)
@@ -224,7 +224,7 @@ class OpenNoteCommand(sublime_plugin.TextCommand):
 		self.registry = load_registry(REGISTRY_PATH)
 		return NoteNameInputHandler(self.registry)
 
-class OpenNoteWithTags(sublime_plugin.TextCommand):
+class ZamekOpenNoteWithTags(sublime_plugin.TextCommand):
 	def run(self, edit, tag_notes, tag_note):
 		self.view.window().open_file(self.registry.notes[tag_note].path)
 
@@ -232,7 +232,7 @@ class OpenNoteWithTags(sublime_plugin.TextCommand):
 		self.registry = load_registry(REGISTRY_PATH)
 		return TagNotesInputHandler(self.registry)
 
-class OpenLinkedNote(sublime_plugin.TextCommand):
+class ZamekOpenLinkedNote(sublime_plugin.TextCommand):
 	def run(self, edit, linked_note):
 		if linked_note:
 			self.view.window().open_file(self.registry.notes[linked_note].path)
@@ -241,7 +241,7 @@ class OpenLinkedNote(sublime_plugin.TextCommand):
 		self.registry = load_registry(REGISTRY_PATH)
 		return LinkedNoteInputHandler(self)
 
-class ScanDirectoryForNotes(sublime_plugin.TextCommand):
+class ZamekScanDirectoryForNotes(sublime_plugin.TextCommand):
 	def run(self, edit, text):
 		if text:
 			path = os.path.abspath(text)

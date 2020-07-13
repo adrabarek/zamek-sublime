@@ -1,5 +1,5 @@
 [
-	{ "keys": ["super+shift+alt+l"], "command": "open_linked_note" },
-	{ "keys": ["super+shift+alt+t"], "command": "open_note_with_tags" },
-	{ "keys": ["super+shift+alt+o"], "command": "open_note" }
+	{ "keys": ["super+shift+alt+l"], "command": "zamek_open_linked_note" },
+	{ "keys": ["super+shift+alt+t"], "command": "zamek_open_note_with_tags" },
+	{ "keys": ["super+shift+alt+o"], "command": "zamek_open_note" }
 ]

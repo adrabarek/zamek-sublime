@@ -51,19 +51,36 @@ Zamek looks for special lines with certain prefixes to handle tags and links. Th
 
 ### Open note
 
-`TODO`
+| Command: | `zamek_open_note` |
+| Command Panel: | `Zamek: Open Note` |
+| Default keyboard shortcut: | `ctrl + alt + shift + o` |
+
+Opens a list of all available Zamek notes.
 
 ### Open linked notes
 
-`TODO`
+| Command: | `zamek_open_linked_note` |
+| Command Panel: | `Zamek: Open Linked Note` |
+| Default keyboard shortcut: | `ctrl + alt + shift + l` |
+
+Opens a list of notes linked to current note.
 
 ### Open notes by tags
 
-`TODO`
+| Command: | `zamek_open_note_with_tags` |
+| Command Panel: | `Zamek: Open Note With Tags` |
+| Default keyboard shortcut: | `ctrl + alt + shift + t` |
+
+Input a comma-separated list of tags to open
+a list of all notes containing all of the tags.
 
 ### Scan directory for notes
 
-`TODO`
+| Command: | `zamek_scan_directory_for_notes` |
+| Command Panel: | `Zamek: Scan Directory For Notes` |
+
+Opens a text prompt. After inputting a valid path, recursively searches for 
+`*.zamek` files and adds them to Zamek.
 
 ### Removing notes
 
