@@ -5,7 +5,7 @@ system of notes. The idea is inspired by [Zettelkasten](https://en.wikipedia.org
 
 ## Overview
 
-Zamek (meaning "castle" in polish) is a collection of notes. The notes are 
+Zamek (meaning "castle" in polish) is a collection of notes. They are 
 organized by tags and can be linked together. 
 
 This simple idea allows for maintaining a single notes repository for all 
@@ -49,7 +49,9 @@ Zamek looks for special lines with certain prefixes to handle tags and links. Th
 
 	The line will be updated with the current date each time the note is saved.
 
-### Open note
+### Commands
+
+#### Open note
 
 | Command Panel | Command | Keyboard shortcut |
 |:---:|:---:|:---:|
@@ -57,7 +59,7 @@ Zamek looks for special lines with certain prefixes to handle tags and links. Th
 
 Opens a choice list of all available Zamek notes.
 
-### Open linked note
+#### Open linked note
 
 | Command Panel | Command | Keyboard shortcut |
 |:---:|:---:|:---:|
@@ -65,7 +67,7 @@ Opens a choice list of all available Zamek notes.
 
 Opens a list of notes linked to current note to choose from.
 
-### Open notes by tags
+#### Open notes by tags
 
 | Command Panel | Command | Keyboard shortcut |
 |:---:|:---:|:---:|
@@ -74,7 +76,7 @@ Opens a list of notes linked to current note to choose from.
 Input a comma-separated list of tags to open
 a choice list of notes containing all of the tags.
 
-### Scan directory for notes
+#### Scan directory for notes
 
 | Command Panel | Command | Keyboard shortcut |
 |:---:|:---:|:---:|
@@ -84,11 +86,10 @@ a choice list of notes containing all of the tags.
 Opens a text prompt. After inputting a valid path, recursively searches for 
 `*.zamek` files and adds them to Zamek.
 
-### Removing notes
+#### Removing notes
 
 | Command Panel | Command | Keyboard shortcut |
 |:---:|:---:|:---:|
 | `Zamek: Delete Note` | `zamek_delete_note` | `ctrl + alt + shift + d` |
 
-Removes the note file from disk. All links to this note are removed from other 
-notes.
+Removes the note file from disk. Links in other notes are updated.
