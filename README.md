@@ -86,8 +86,9 @@ Opens a text prompt. After inputting a valid path, recursively searches for
 
 ### Removing notes
 
-`TODO`
+| Command Panel | Command | Keyboard shortcut |
+|:---:|:---:|:---:|
+| `Zamek: Delete Note` | `zamek_delete_note` | `ctrl + alt + shift + d` |
 
-## Implementation
-
-`TODO`
+Removes the note file from disk. All links to this note are removed from other 
+notes.

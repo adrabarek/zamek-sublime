@@ -35,9 +35,4 @@ class FilePath:
 	def __init__(self, path):
 		self.path = path
 		self.base_name = os.path.basename(path)
-		# todo: os.path.splitext
-		split = self.base_name.split('.')
-		self.no_extension = split[0]
-		self.extension = ""
-		if len(split) > 1:
-			self.extension = split[1]
+		(self.no_extension, self.extension) = os.path.splitext(self.base_name)

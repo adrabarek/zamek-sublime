@@ -16,6 +16,10 @@
 		"command": "zamek_print_registry"
 	},
 	{
+		"caption": "Zamek: Delete Note",
+		"command": "zamek_delete_note"
+	},
+	{
 		"caption": "Zamek: Scan Directory For Notes",
 		"command": "zamek_scan_directory_for_notes"
 	},

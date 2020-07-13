@@ -18,8 +18,15 @@ class Note:
 		fn = utils.FilePath(path)
 		self.path = path
 		self.name = fn.no_extension
-		self.tags = set([])
-		self.links = set([])
+		if os.path.exists(path):		
+			lines = []
+			with open(self.path, "r") as f:
+				lines = f.readlines()
+			self.links = set(utils.split_list("links", lines))
+			self.tags = set(utils.split_list("tags", lines))			
+		else:
+			self.tags = set([])
+			self.links = set([])
 
 	def update_text(self, note_text=None):
 		lines = []
@@ -85,7 +92,6 @@ class Registry:
 
 	def remove_note(self, note):
 		self.notes.pop(note.name)
-		self.links.pop(note.name)
 
 		empty_tags = []
 		for tag in note.tags:
@@ -95,9 +101,10 @@ class Registry:
 		for tag in empty_tags:
 			self.tags.pop(tag)
 
-		for link in note.links:
-			self.links[link].remove(note.name)
-			update_note_links(self.notes[link])
+		links = note.links.copy()
+		for link in links:
+			self.__remove_link(self.notes[link], note)
+			self.notes[link].update_text()
 	
 	def remove_deleted_links_and_tags(self, note):
 		if note.name in self.notes:
@@ -160,9 +167,6 @@ class NoteSaver(sublime_plugin.EventListener):
 			registry.remove_deleted_links_and_tags(note)
 
 			save_registry(registry, REGISTRY_PATH)
-
-	def on_post_save(self, view):
-		pass
 
 class TagNoteInputHandler(sublime_plugin.ListInputHandler):
 	def __init__(self, registry, tags):
@@ -240,6 +244,22 @@ class ZamekOpenLinkedNote(sublime_plugin.TextCommand):
 	def input(self, args):
 		self.registry = load_registry(REGISTRY_PATH)
 		return LinkedNoteInputHandler(self)
+
+class ZamekDeleteNote(sublime_plugin.TextCommand):
+	def run(self, edit):
+		file_path = self.view.file_name()
+		if file_path:
+			(_, ext) = os.path.splitext(file_path)
+			if ext == NOTE_EXTENSION:
+				should_del = sublime.ok_cancel_dialog("Delete Zamek note? This will also delete the file from disk.", "Delete")
+				if should_del:
+					registry = load_registry(REGISTRY_PATH)
+					if registry:
+						registry.remove_note(Note(file_path))
+						os.remove(file_path)
+						save_registry(registry, REGISTRY_PATH)
+			else:
+				sublime.error_message("Not a Zamek note!")
 
 class ZamekScanDirectoryForNotes(sublime_plugin.TextCommand):
 	def run(self, edit, text):
