@@ -51,33 +51,35 @@ Zamek looks for special lines with certain prefixes to handle tags and links. Th
 
 ### Open note
 
-| Command: | `zamek_open_note` |
-| Command Panel: | `Zamek: Open Note` |
-| Default keyboard shortcut: | `ctrl + alt + shift + o` |
+| Command Panel | Command | Keyboard shortcut |
+|:---:|:---:|:---:|
+| `Zamek: Open Note` | `zamek_open_note` | `ctrl + alt + shift + o` |
 
-Opens a list of all available Zamek notes.
+Opens a choice list of all available Zamek notes.
 
-### Open linked notes
+### Open linked note
 
-| Command: | `zamek_open_linked_note` |
-| Command Panel: | `Zamek: Open Linked Note` |
-| Default keyboard shortcut: | `ctrl + alt + shift + l` |
+| Command Panel | Command | Keyboard shortcut |
+|:---:|:---:|:---:|
+| `Zamek: Open Linked Note` | `zamek_open_linked_note` | `ctrl + alt + shift + l` |
 
-Opens a list of notes linked to current note.
+Opens a list of notes linked to current note to choose from.
 
 ### Open notes by tags
 
-| Command: | `zamek_open_note_with_tags` |
-| Command Panel: | `Zamek: Open Note With Tags` |
-| Default keyboard shortcut: | `ctrl + alt + shift + t` |
+| Command Panel | Command | Keyboard shortcut |
+|:---:|:---:|:---:|
+| `Zamek: Open Note With Tags` | `zamek_open_note_with_tags` | `ctrl + alt + shift + t` |
 
 Input a comma-separated list of tags to open
-a list of all notes containing all of the tags.
+a choice list of notes containing all of the tags.
 
 ### Scan directory for notes
 
-| Command: | `zamek_scan_directory_for_notes` |
-| Command Panel: | `Zamek: Scan Directory For Notes` |
+| Command Panel | Command | Keyboard shortcut |
+|:---:|:---:|:---:|
+| `Zamek: Scan Directory For Notes` | `zamek_scan_directory_for_notes` | - |
+
 
 Opens a text prompt. After inputting a valid path, recursively searches for 
 `*.zamek` files and adds them to Zamek.
