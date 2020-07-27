@@ -30,7 +30,7 @@ def split_list(prefix, text_lines):
     # If found, returns ["a", "b", "c"].
 
     for line in text_lines:
-        split = line.split(':')
+        split = line.rstrip().split(':')
         if split[0] == prefix:
             result = split_line(split[1])
             return result
@@ -140,7 +140,7 @@ class Registry:
         empty_tags = []
         for tag in note.tags:
             self.tags[tag].remove(note.name)
-            if self.tags[tag].empty():
+            if not self.tags[tag]:
                 empty_tags.append(tag)
         for tag in empty_tags:
             self.tags.pop(tag)
@@ -159,7 +159,7 @@ class Registry:
                 self.tags[deleted_tag].remove(note.name)
 
             for deleted_tag in deleted_tags:
-                if self.tags[deleted_tag].empty():
+                if self.tags[deleted_tag]:
                     self.tags.pop(deleted_tag)
             deleted_links = old_note.links - note.links
 
